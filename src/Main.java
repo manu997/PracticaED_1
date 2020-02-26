@@ -20,10 +20,14 @@ public class Main {
         gal.insertarAlumno(al4);
 
         gal.mostrarGrupo();
-        System.out.println(gal.getAlumno(1));
 
         System.out.println("La media del grupo es de " + gal.mediaCalif());
 
         System.out.println(gal.mejorAlumno().getNombre() + " tiene la mejor nota de su grupo.");
+
+        gal.eliminarAlumno("Manuel García Sacedón");
+        gal.eliminarAlumno("Felipe Arias González");
+
+        gal.mostrarGrupo();
     }
 }

@@ -47,15 +47,11 @@ public class GrupoAlumnos {
             }
             listaAlumnos[0] = alumno;
             System.out.println(true);
+            numAlumnos++;
         }
     }
 
     public int getNumAlumnos() {
-        for(int i=0; i<listaAlumnos.length; i++) {
-            if(listaAlumnos[i] != null) {
-                numAlumnos++;
-            }
-        }
         return numAlumnos;
     }
 
@@ -68,7 +64,7 @@ public class GrupoAlumnos {
     }
 
     public void mostrarGrupo() {
-        System.out.println("GRUPO " + getNombre()+": " + getNumAlumnos()+" alumnos.");
+        System.out.println("GRUPO " + getNombre()+": " + numAlumnos +" alumnos.");
         for(int i=0; i<numAlumnos; i++) {
             getAlumno(i).mostrarAlumno();
         }
@@ -96,5 +92,18 @@ public class GrupoAlumnos {
             }
         }
         return mejorNota;
+    }
+
+    public void eliminarAlumno(String nombre) {
+        Alumno[] auxArr = new Alumno[maximo];
+        for (int i=0; i<numAlumnos; i++) {
+            if(listaAlumnos[i].getNombre() != nombre) {
+                auxArr[i] = listaAlumnos[i];
+            }
+        }
+        numAlumnos--;
+        for (int i=0; i<numAlumnos; i++) {
+            listaAlumnos[i] = auxArr[i];
+        }
     }
 }
