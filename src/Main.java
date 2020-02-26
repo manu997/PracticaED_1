@@ -13,9 +13,17 @@ public class Main {
         al4.matricularAsignatura("Algebra");
         al4.matricularAsignatura("Estructuras de Computadores");
 
-        al4.mostrarAsignaturas();
+        GrupoAlumnos gal = new GrupoAlumnos("GX11", 20);
+        gal.insertarAlumno(al1);
+        gal.insertarAlumno(al2);
+        gal.insertarAlumno(al3);
+        gal.insertarAlumno(al4);
 
-        al1.mostrarAlumno();
-        al4.mostrarAlumno();
+        gal.mostrarGrupo();
+        System.out.println(gal.getAlumno(1));
+
+        System.out.println("La media del grupo es de " + gal.mediaCalif());
+
+        System.out.println(gal.mejorAlumno().getNombre() + " tiene la mejor nota de su grupo.");
     }
 }
